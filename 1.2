@@ -6,11 +6,14 @@ int main(){
 
 typedef struct name(){
     int value;
-    struct name * value;
+    struct name * next;
 }
 
 name * head = NULL;
 head = (name*)malloc(sizeof(node_t));
+
+head->value = 1;
+head->next = NULL;
 
 
 
