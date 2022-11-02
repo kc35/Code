@@ -1,4 +1,3 @@
-// C program to reverse a linked list in groups of given size
 #include<stdio.h>
 #include<stdlib.h>
  
@@ -45,7 +44,7 @@ struct Node *reverse (struct Node *head, int k)
  
 /* UTILITY FUNCTIONS */
 /* Function to push a node */
-void push(struct Node** head_ref, int new_data)
+void push(struct Node** a, int new_data)
 {
     /* allocate node */
     struct Node* new_node =
@@ -55,10 +54,10 @@ void push(struct Node** head_ref, int new_data)
     new_node->data  = new_data;
  
     /* link the old list off the new node */
-    new_node->next = (*head_ref);   
+    new_node->next = (*a);   
  
     /* move the head to point to the new node */
-    (*head_ref)    = new_node;
+    (*a)    = new_node;
 }
  
 /* Function to print linked list */
