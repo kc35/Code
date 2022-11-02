@@ -1,47 +1,43 @@
 #include <stdio.h>
-struct Node {
-   int data;
-   struct Node* next;
+#include <stdlib.h>
+
+// Creating a node
+struct node {
+  int value;
+  struct node *next;
 };
-Node* insertNode(int key) {
-   Node* temp = new Node;
-   temp->data = key;
-   temp->next = NULL;
-   return temp;
+
+// print the linked list value
+void printLinkedlist(struct node *p) {
+  while (p != NULL) {
+    printf("%d ", p->value);
+    p = p->next;
+  }
 }
-void tailRecRevese(Node* current, Node* previous, Node** head){
-   if (!current->next) {
-      *head = current;
-      current->next = previous;
-      return;
-   }
-   Node* next = current->next;
-   current->next = previous;
-   tailRecRevese(next, current, head);
-}
-void tailRecReveseLL(Node** head){
-   if (!head)
-      return;
-   tailRecRevese(*head, NULL, head);
-}
-void printLinkedList(Node* head){
-   while (head != NULL) {
-      printf("%d ", head->data);
-      head = head->next;
-   }
-   printf("
-");
-}
-int main(){
-   Node* head1 = insertNode(9);
-   head1->next = insertNode(32);
-   head1->next->next = insertNode(65);
-   head1->next->next->next = insertNode(10);
-   head1->next->next->next->next = insertNode(85);
-   printf("Linked list : \t");
-   printLinkedList(head1);
-   tailRecReveseLL(&head1);
-   printf("Reversed linked list : \t");
-   printLinkedList(head1);
-   return 0;
+
+int main() {
+  // Initialize nodes
+  struct node *head;
+  struct node *one = NULL;
+  struct node *two = NULL;
+  struct node *three = NULL;
+
+  // Allocate memory
+  one = malloc(sizeof(struct node));
+  two = malloc(sizeof(struct node));
+  three = malloc(sizeof(struct node));
+
+  // Assign value values
+  one->value = 1;
+  two->value = 2;
+  three->value = 3;
+
+  // Connect nodes
+  one->next = two;
+  two->next = three;
+  three->next = NULL;
+
+  // printing node-value
+  head = one;
+  printLinkedlist(head);
 }
