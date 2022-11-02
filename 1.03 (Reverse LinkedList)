@@ -9,10 +9,10 @@ struct Node {
 };
  
 /* Function to reverse the linked list */
-static void reverse(struct Node** head_ref)
+static void reverse(struct Node** a)
 {
     struct Node* prev = NULL;
-    struct Node* current = *head_ref;
+    struct Node* current = *a;
     struct Node* next = NULL;
     while (current != NULL) {
         // Store next
@@ -25,17 +25,17 @@ static void reverse(struct Node** head_ref)
         prev = current;
         current = next;
     }
-    *head_ref = prev;
+    *a = prev;
 }
  
 /* Function to push a node */
-void push(struct Node** head_ref, int new_data)
+void push(struct Node** a, int new_data)
 {
     struct Node* new_node
         = (struct Node*)malloc(sizeof(struct Node));
     new_node->data = new_data;
-    new_node->next = (*head_ref);
-    (*head_ref) = new_node;
+    new_node->next = (*a);
+    (*a) = new_node;
 }
  
 /* Function to print linked list */
