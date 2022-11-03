@@ -4,77 +4,77 @@ struct Node {
     int data;
     struct Node* next;
 };
-struct Node* newNode(int val)
+struct Node* Node1(int m)
 {
     struct Node* temp = (struct Node*)malloc(sizeof(struct Node));
-    temp->data = val;
+    temp->data = m;
     temp->next = NULL;
     return temp;
 }
-struct Node* selectionsortfunction(struct Node* head)
+struct Node* selectionsort(struct Node* head)
 {
-    struct Node *x, *y, *z, *w, *s;
-    x = y = head;
-    while (y->next) {
-        z = w = y->next;
-        while (w) {
-            if (y->data > w->data) {
-                if (y->next == w) {
-                    if (y == head) {
-                        y->next = w->next;
-                        w->next = y;
-                        s = y;
-                        y = w;
-                        w = s;
-                        z = w;
-                        head = y;
-                        w = w->next;
+    struct Node *i, *j, *k, *l, *n;
+    i = j = head;
+    while (j->next) {
+        k = l = j->next;
+        while (l) {
+            if (j->data > w->data) {
+                if (j->next == l) {
+                    if (j == head) {
+                        j->next = l->next;
+                        l->next = j;
+                        n = j;
+                        j = l;
+                        l = n;
+                        k = l;
+                        head = j;
+                        l = l->next;
                     }
                     else {
-                        y->next = w->next;
-                        w->next = y;
-                        x->next = w;
-                        s = y;
-                        y = w;
-                        w = s;
-                        z = w;
-                        w = w->next;
+                        j->next = l->next;
+                        l->next = j;
+                        i->next = l;
+                        n = j;
+                        j = l;
+                        l = n;
+                        k = l;
+                        l = l->next;
                     }
                 }
                 else {
-                    if (y == head) {
-                        s = y->next;
-                        y->next = w->next;
-                        w->next = s;
-                        z->next = y;
-                        s = y;
-                        y = w;
-                        w = s;
-                        z = w;
-                        w = w->next;
-                        head = y;
+                    if (j == head) {
+                        n = j->next;
+                        y->next = l->next;
+                        w->next = n;
+                        k->next = j;
+                        n = j;
+                        j = l;
+                        l = n;
+                        k = l;
+                        l = l->next;
+                        head = j;
                     }
                     else {
-                        s = y->next;
-                        y->next = w->next;
-                        w->next = s;
-                        z->next = y;
-                        x->next = w;
-                        s = y;
-                        y = w;
-                        w = s;
-                        z = w;
-                        w = w->next;
+                        n = y->next;
+                        j->next = w->next;
+                        w->next = n;
+                        k->next = j;
+                        x->next = l;
+                        n = j;
+                        j = l;
+                        l = n;
+                        k = l;
+                        l = l->next;
                     }
                 }
             }
             else {
-                z = w;
-                w = w->next;
+                k = l;
+                l = l->next;
             }
         }
-        x = y;
-        y = y->next;
+        i = j;
+        j = j->next;
     }
     
     return head;
@@ -88,11 +88,11 @@ void show(struct Node* head)
 }
 int main()
 {
-   struct Node* head = newNode(5);
-    head->next = newNode(4);
-    head->next->next = newNode(3);
-    head->next->next->next = newNode(2);
-    head = selectionsortfunction(head);
+   struct Node* head = Node1(5);
+    head->next = Node1(4);
+    head->next->next = Node1(3);
+    head->next->next->next = Node1(2);
+    head = selectionsort(head);
     show(head);
     return 0;
 }
