@@ -64,15 +64,15 @@ struct Node* last_node(struct Node* head)
  
 // We are Setting the given last node position to its proper
 // position
-struct Node* parition(struct Node* first, struct Node* last)
+struct Node* lastNodePosition(struct Node* first, struct Node* last)
 {
     // Get first node of given linked list
-    struct Node* pivot = first;
+    struct Node* piv = first;
     struct Node* front = first;
     int temp = 0;
     while (front != NULL && front != last) {
         if (front->data < last->data) {
-            pivot = first;
+            piv = first;
  
             // Swapping  node values
             temp = first->data;
@@ -91,7 +91,7 @@ struct Node* parition(struct Node* first, struct Node* last)
     temp = first->data;
     first->data = last->data;
     last->data = temp;
-    return pivot;
+    return piv;
 }
  
 // Performing quick sort in  the given linked list
@@ -100,14 +100,14 @@ void quick_sort(struct Node* first, struct Node* last)
     if (first == last) {
         return;
     }
-    struct Node* pivot = parition(first, last);
+    struct Node* piv = lastNodePosition(first, last);
  
-    if (pivot != NULL && pivot->next != NULL) {
+    if (piv != NULL && piv->next != NULL) {
         quick_sort(pivot->next, last);
     }
  
-    if (pivot != NULL && first != pivot) {
-        quick_sort(first, pivot);
+    if (piv != NULL && first != piv) {
+        quick_sort(first, piv);
     }
 }
  
@@ -117,16 +117,16 @@ int main()
     struct Node* head = NULL;
  
     // Create linked list
-    insert(&head, 41);
-    insert(&head, 5);
+    insert(&head, 26);
     insert(&head, 7);
-    insert(&head, 22);
-    insert(&head, 28);
-    insert(&head, 63);
-    insert(&head, 4);
-    insert(&head, 8);
     insert(&head, 2);
-    insert(&head, 11);
+    insert(&head, 3);
+    insert(&head, 38);
+    insert(&head, 4);
+    insert(&head, 9);
+    insert(&head, 34);
+    insert(&head, 64);
+    insert(&head, 27);
     printf("\n Before Sort ");
     display(head);
  
