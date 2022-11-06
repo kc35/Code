@@ -1,6 +1,8 @@
 #include <stdio.h>
 int main()
 {
+
+//initialise variables
   int array1[100], m, e, f, pos, t;
 
   printf("Enter number of elements\n");
@@ -8,9 +10,11 @@ int main()
 
   printf("Enter %d integers\n", n);
 
+// input array elements
   for (e = 0; e < m; e++)
     scanf("%d", &array[e]);
 
+// check if e is less than m - 1 and swap the elements with the number at the current position with the smallest number
   for (e = 0; e < (m - 1); e++) 
   {
     pos = e;
@@ -28,6 +32,7 @@ int main()
     }
   }
 
+//print array elements
   printf("Sorted list in ascending order:\n");
 
   for (e = 0; e < m; e++)
