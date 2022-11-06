@@ -1,12 +1,14 @@
 #include<stdio.h>
 #include<stdlib.h>
  
+ 
 struct Node
 {
     int data;
     struct Node* next;
 };
  
+ //initialise node reverse in the node custom datatype
 struct Node *reverse (struct Node *head, int l)
 {
     if (!head)
@@ -18,7 +20,7 @@ struct Node *reverse (struct Node *head, int l)
     int count = 0;
    
      
-     
+     // while loop to check if current node is not the last node and count is less than 1, if true swap the elements, ending with adding a 1 to count. 
     while (current != NULL && count < l)
     {
         next  = current->next;
@@ -30,28 +32,21 @@ struct Node *reverse (struct Node *head, int l)
      
     if (next !=  NULL)
        head->next = reverse(next, l);
- 
-
     return prev;
 }
  
-
+ //allocate memory to the nodes and swap the nodes
 void push(struct Node** a, int new_data)
 {
- 
     struct Node* new_node =
             (struct Node*) malloc(sizeof(struct Node));
-
     new_node->data  = new_data;
- 
-
     new_node->next = (*a);   
- 
-
     (*a)    = new_node;
+    
 }
  
-
+//print list of nodes
 void printList(struct Node *node)
 {
     while (node != NULL)
@@ -61,12 +56,10 @@ void printList(struct Node *node)
     }
 }   
  
-/* Driver code*/
 int main(void)
 {
    
     struct Node* head = NULL;
-  
 
      push(&head, 9);
      push(&head, 8);
