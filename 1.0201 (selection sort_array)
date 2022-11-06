@@ -11,13 +11,13 @@ int main()
   for (e = 0; e < m; e++)
     scanf("%d", &array[e]);
 
-  for (e = 0; e < (m - 1); e++) // finding minimum element (n-1) times
+  for (e = 0; e < (m - 1); e++) 
   {
     pos = e;
 
     for (f = e + 1; f < m; f++)
     {
-      if (array[position] > array[d])
+      if (array[pos] > array[d])
         pos = f;
     }
     if (pos != m)
