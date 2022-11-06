@@ -11,6 +11,8 @@ struct Node* Node1(int m)
     temp->next = NULL;
     return temp;
 }
+
+//swapping the smallest number with the first number. 
 struct Node* selectionsort(struct Node* head)
 {
     struct Node *i, *j, *k, *l, *n;
