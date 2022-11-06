@@ -1,20 +1,19 @@
 #include <stdio.h>
 #include <stdlib.h>
  
-// Creating  structure
+
 struct Node {
     int data;
     struct Node* next;
 };
- 
-// Add new node at end of linked list
+
 void insert(struct Node** head, int value)
 {
-    // Create dynamic node
+
     struct Node* node
         = (struct Node*)malloc(sizeof(struct Node));
     if (node == NULL) {
-        // checking memory overflow
+
         printf("Memory overflow\n");
     }
     else {
@@ -26,18 +25,18 @@ void insert(struct Node** head, int value)
         else {
             struct Node* temp = *head;
  
-            // finding last node
+       
             while (temp->next != NULL) {
                 temp = temp->next;
             }
  
-            // adding node at last position
+       
             temp->next = node;
         }
     }
 }
  
-// Displaying linked list element
+
 void display(struct Node* head)
 {
     if (head == NULL) {
@@ -52,7 +51,7 @@ void display(struct Node* head)
     }
 }
  
-// Finding last node of linked list
+
 struct Node* last_node(struct Node* head)
 {
     struct Node* temp = head;
@@ -62,8 +61,7 @@ struct Node* last_node(struct Node* head)
     return temp;
 }
  
-// We are Setting the given last node position to its proper
-// position
+
 struct Node* lastNodePosition(struct Node* first, struct Node* last)
 {
     // Get first node of given linked list
@@ -74,27 +72,27 @@ struct Node* lastNodePosition(struct Node* first, struct Node* last)
         if (front->data < last->data) {
             piv = first;
  
-            // Swapping  node values
+     
             temp = first->data;
             first->data = front->data;
             front->data = temp;
  
-            // Visiting the next node
+        
             first = first->next;
         }
  
-        // Visiting the next node
+   
         front = front->next;
     }
  
-    // Change last node value to current node
+
     temp = first->data;
     first->data = last->data;
     last->data = temp;
     return piv;
 }
  
-// Performing quick sort in  the given linked list
+
 void quick_sort(struct Node* first, struct Node* last)
 {
     if (first == last) {
@@ -111,7 +109,7 @@ void quick_sort(struct Node* first, struct Node* last)
     }
 }
  
-// Driver's code
+
 int main()
 {
     struct Node* head = NULL;
@@ -130,7 +128,7 @@ int main()
     printf("\n Before Sort ");
     display(head);
  
-    // Function call
+
     quick_sort(head, last_node(head));
     printf("\n After Sort ");
     display(head);
