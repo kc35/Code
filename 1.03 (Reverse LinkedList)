@@ -7,18 +7,16 @@ struct Node {
     struct Node* next;
 };
  
+ //to reverse the elements if it is not the end of the linked list, in case of a singly linked list. 
 static void reverse(struct Node** a)
 {
     struct Node* prev = NULL;
     struct Node* current = *a;
     struct Node* next = NULL;
     while (current != NULL) {
-
+    
         next = current->next;
- 
-
         current->next = prev;
- 
         prev = current;
         current = next;
     }
@@ -34,6 +32,7 @@ void send(struct Node** a, int new_data)
     (*a) = new_node;
 }
  
+ //print all the members of the linked list.
 void printList(struct Node* head)
 {
     struct Node* temp = head;
@@ -43,6 +42,7 @@ void printList(struct Node* head)
     }
 }
 
+// main function to encapsulate other functions
 int main()
 {
    
