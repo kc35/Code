@@ -1,4 +1,3 @@
-// C program to sort link list
 // using insertion sort
 #include <stdio.h>
 #include <stdlib.h>
@@ -9,18 +8,18 @@ struct node {
 };
   
 struct node* head = NULL;
-struct node* sorted = NULL;
+struct node* sort1 = NULL;
   
-void push(int val)
+void send(int val)
 {
     /* allocate node */
-    struct node* newnode
+    struct node* m
         = (struct node*)malloc(sizeof(struct node));
-    newnode->data = val;
+    m->data = val;
     /* link the old list off the new node */
-    newnode->next = head;
+    m->next = head;
     /* move the head to point to the new node */
-    head = newnode;
+    head = m;
 }
   
 /*
@@ -29,23 +28,23 @@ void push(int val)
  * can modify the head of the input linked list
  * (similar to push())
  */
-void sortedInsert(struct node* newnode)
+void sortedInsert(struct node* m)
 {
     /* Special case for the head end */
-    if (sorted == NULL || sorted->data >= newnode->data) {
-        newnode->next = sorted;
-        sorted = newnode;
+    if (sorted == NULL || sorted->data >= ,m->data) {
+        m->next = sort1;
+        sort1 = m;
     }
     else {
-        struct node* current = sorted;
+        struct node* curr = sort1;
         /* Locate the node before the point of insertion
          */
-        while (current->next != NULL
-               && current->next->data < newnode->data) {
-            current = current->next;
+        while (curr->next != NULL
+               && curr->next->data < m->data) {
+            curr = curr->next;
         }
-        newnode->next = current->next;
-        current->next = newnode;
+        m->next = curr->next;
+        curr->next = m;
     }
 }
   
@@ -54,23 +53,23 @@ void sortedInsert(struct node* newnode)
 void insertionsort()
 {
   
-    struct node* current = head;
+    struct node* curr = head;
   
     // Traverse the given linked list and insert every
     // node to sorted
-    while (current != NULL) {
+    while (curr != NULL) {
   
         // Store next for next iteration
-        struct node* next = current->next;
+        struct node* next = curr->next;
   
         // insert current in sorted linked list
-        sortedInsert(current);
+        sortedInsert(curr);
   
-        // Update current
-        current = next;
+        // Update curr
+        curr = next;
     }
     // Update head to point to sorted linked list
-    head = sorted;
+    head = sort1;
 }
   
 /* Function to print linked list */
@@ -87,11 +86,11 @@ void printlist(struct node* head)
 int main()
 {
   
-    push(5);
-    push(20);
-    push(4);
-    push(3);
-    push(30);
+    send(5);
+    send(20);
+    send(4);
+    send(3);
+    send(30);
   
     printf("Linked List before sorting:\n");
     printlist(head);
