@@ -29,7 +29,7 @@ static void reverse(struct Node** a)
 }
  
 /* Function to push a node */
-void push(struct Node** a, int new_data)
+void send(struct Node** a, int new_data)
 {
     struct Node* new_node
         = (struct Node*)malloc(sizeof(struct Node));
@@ -54,10 +54,10 @@ int main()
     /* Start with the empty list */
     struct Node* head = NULL;
  
-    push(&head, 20);
-    push(&head, 4);
-    push(&head, 15);
-    push(&head, 85);
+    send(&head, 20);
+    send(&head, 4);
+    send(&head, 15);
+    send(&head, 85);
  
     printf("Given linked list\n");
     printList(head);
