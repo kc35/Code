@@ -14,7 +14,7 @@ int main()
   for (e = 0; e < m; e++)
     scanf("%d", &array[e]);
 
-// check if e is less than m - 1 and swap the elements with the number at the current position with the smallest number
+// check if e is less than m - 1 and swap the elements with the number at the first position with the smallest number if 'f' is not equal to 'm'.
   for (e = 0; e < (m - 1); e++) 
   {
     pos = e;
