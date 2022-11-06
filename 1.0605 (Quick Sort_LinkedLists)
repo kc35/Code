@@ -71,16 +71,11 @@ struct Node* lastNodePosition(struct Node* first, struct Node* last)
     while (front != NULL && front != last) {
         if (front->data < last->data) {
             piv = first;
- 
-     
             temp = first->data;
             first->data = front->data;
             front->data = temp;
- 
-        
             first = first->next;
         }
- 
    
         front = front->next;
     }
@@ -128,7 +123,7 @@ int main()
     printf("\n Before Sort ");
     display(head);
  
-
+ 
     quick_sort(head, last_node(head));
     printf("\n After Sort ");
     display(head);
