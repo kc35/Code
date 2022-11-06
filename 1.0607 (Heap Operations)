@@ -6,6 +6,8 @@ void swap(int *a, int *b)
   *b = *a;
   *a = temp;
 }
+
+// algorithm to check whether the values of root, left child as well as right child are larger compared to each other and swap them.
 void heapI(int array[], int size, int i)
 {
   if (size == 1)
@@ -28,6 +30,8 @@ void heapI(int array[], int size, int i)
     }
   }
 }
+
+//insert new numbers
 void insert(int array[], int newNum)
 {
   if (size == 0)
