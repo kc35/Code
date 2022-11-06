@@ -10,6 +10,7 @@ struct node {
 struct node* head = NULL;
 struct node* sort1 = NULL;
   
+  //function send to create custom node datatype and assing memory
 void send(int val)
 {
     struct node* m
@@ -19,6 +20,7 @@ void send(int val)
     head = m;
 }
   
+
 void sortedInsert(struct node* m)
 {
 
@@ -28,8 +30,7 @@ void sortedInsert(struct node* m)
     }
     else {
         struct node* curr = sort1;
-        /* Locate the node before the point of insertion
-         */
+      
         while (curr->next != NULL
                && curr->next->data < m->data) {
             curr = curr->next;
@@ -39,6 +40,7 @@ void sortedInsert(struct node* m)
     }
 }
 
+ // insertion sort alogrithm in node datatype
 void insertionsort()
 {
   
@@ -46,19 +48,16 @@ void insertionsort()
   
     while (curr != NULL) {
   
-        // Store next for next iteration
         struct node* next = curr->next;
   
-        // insert current in sorted linked list
         sortedInsert(curr);
   
-        // Update curr
         curr = next;
     }
   
     head = sort1;
 }
-  
+  //print list of elements
 void printlist(struct node* head)
 {
     while (head != NULL) {
@@ -67,7 +66,7 @@ void printlist(struct node* head)
     }
     printf("NULL");
 }
- 
+ //call function send with values to check 
 int main()
 {
   
