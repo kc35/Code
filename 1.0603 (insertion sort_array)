@@ -2,21 +2,21 @@
 #include <stdio.h> 
 
 //iterates through all the elements and sorts them in ascending order
-void insertionSort(int array[], int n) 
+void insertionSort(int array[], int y) 
 { 
-    int o, element, p; 
-    for (o = 1; o < n; o++) { element = array[o]; p = o - 1; while (p >= 0 && array[p] > element) { 
-            array[p + 1] = array[p]; 
-            p = p - 1; 
+    int t, element, g; 
+    for (t = 1; t < y; t++) { element = array[t]; g = t - 1; while (g >= 0 && array[g] > element) { 
+            array[g + 1] = array[g]; 
+            g = g - 1; 
         } 
-        array[p + 1] = element; 
+        array[g + 1] = element; 
     } 
 } 
-   //print array eleements
-void printArray(int array[], int n) 
+   //print array elements
+void printArray(int array[], int y) 
 { 
-    int o; 
-    for (o = 0; o < n; o++) 
-        printf("%d ", array[o]); 
+    int t; 
+    for (t = 0; t < y; t++) 
+        printf("%d ", array[t]); 
     printf("n"); 
 }
