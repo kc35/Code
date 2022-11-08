@@ -4,8 +4,8 @@
 //iterates through all the elements and sorts them in ascending order
 void insertionSort(int array[], int y) 
 { 
-    int t, element, g; 
-    for (t = 1; t < y; t++) { element = array[t]; g = t - 1; while (g >= 0 && array[g] > element) { 
+    int r, element, g; 
+    for (r = 1; r < y; r++) { element = array[r]; g = r - 1; while (g >= 0 && array[g] > element) { 
             array[g + 1] = array[g]; 
             g = g - 1; 
         } 
@@ -13,10 +13,10 @@ void insertionSort(int array[], int y)
     } 
 } 
    //print array elements
-void printArray(int array[], int y) 
+void ShowArrayElements(int array[], int y) 
 { 
-    int t; 
-    for (t = 0; t < y; t++) 
-        printf("%d ", array[t]); 
+    int r; 
+    for (r = 0; r < y; r++) 
+        printf("%d ", ShowArrayElements[r]); 
     printf("n"); 
 }
