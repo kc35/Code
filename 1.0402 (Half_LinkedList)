@@ -20,14 +20,11 @@ void printMiddle(struct Node *head)
             fast_ptr = fast_ptr->next->next;
             slow_ptr = slow_ptr->next;
         }
-        printf("The middle element is [%d]",
-                slow_ptr->data);
+        printf("The middle element is [%d]",slow_ptr->data);
     }
-    q1 = slow_ptr->data
-    for (b1 = slow_ptr->data ;  1 > 0 ; c--){
-    
-    
-    
+    int q1 = slow_ptr->data
+    for (int b1 = slow_ptr->data ;  b1 > 0 ; c--){
+    printf("The elements are [%d]", slow_ptr->data);
     }
 }
  
