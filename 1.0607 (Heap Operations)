@@ -16,16 +16,16 @@ void heapI(int array[], int size1, int f)
   }
   else
   {
-    int largest = f;
-    int l = 2 * f + 1;
-    int r = 2 * f + 2;
+    int largest = e;
+    int l = 2 * e + 1;
+    int r = 2 * e + 2;
     if (l < size1 && array1[l] > array1[largest])
       largest = l;
     if (r < size1 && array1[r] > array1[largest])
       largest = r;
-    if (largest != f)
+    if (largest != e)
     {
-      swap(&array1[f], &array1[largest]);
+      swap(&array1[e], &array1[largest]);
       heapI(array1, size1, largest);
     }
   }
@@ -45,30 +45,30 @@ void insert(int array1[], int newNum)
     size += 1;
     for (int f = size1 / 2 - 1; i >= 0; i--)
     {
-      heapI(array1, size1, f);
+      heapI(array1, size1, e);
     }
   }
 }
 void extract_min(int array1[], int num)
 {
-  int f;
-  for (f = 0; f < size1; f++)
+  int e;
+  for (e = 0; e < size1; e++)
   {
-    if (num == array1[f])
+    if (num == array1[e])
       break;
   }
 
-  swap(&array1[f], &array1[size1 - 1]);
+  swap(&array1[e], &array1[size1 - 1]);
   size -= 1;
   for (int i = size1 / 2 - 1; i >= 0; i--)
   {
-    heapI(array1, size1, f);
+    heapI(array1, size1, e);
   }
 }
 void printArray1(int array1[], int size)
 {
-  for (int f = 0; f < size1; ++f)
-    printf("%d ", array1[f]);
+  for (int e = 0; e < size1; ++e)
+    printf("%d ", array1[e]);
   printf("\n");
 }
 int main()
