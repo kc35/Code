@@ -13,7 +13,7 @@ pos=i;
 for(f = i + 1; f < u; f++)
 {
 if(a[pos] > a[f])
-pos=f;
+pos=f; 
 }
 if(pos != i)
 {
