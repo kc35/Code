@@ -8,7 +8,7 @@ void swap(int *a1, int *b1)
 }
 
 // algorithm to check whether the values of root, left child as well as right child are larger compared to each other and swap them.
-void heapI(int array[], int size, int f)
+void heapI(int array[], int size1, int f)
 {
   if (size == 1)
   {
@@ -19,14 +19,14 @@ void heapI(int array[], int size, int f)
     int largest = f;
     int l = 2 * f + 1;
     int r = 2 * f + 2;
-    if (l < size && array1[l] > array1[largest])
+    if (l < size1 && array1[l] > array1[largest])
       largest = l;
-    if (r < size && array1[r] > array1[largest])
+    if (r < size1 && array1[r] > array1[largest])
       largest = r;
     if (largest != f)
     {
       swap(&array1[f], &array1[largest]);
-      heapI(array1, size, largest);
+      heapI(array1, size1, largest);
     }
   }
 }
@@ -34,40 +34,40 @@ void heapI(int array[], int size, int f)
 //insert new numbers
 void insert(int array1[], int newNum)
 {
-  if (size == 0)
+  if (size1 == 0)
   {
     array1[0] = newNum;
     size += 1;
   }
   else
   {
-    array1[size] = newNum;
+    array1[size1] = newNum;
     size += 1;
-    for (int f = size / 2 - 1; i >= 0; i--)
+    for (int f = size1 / 2 - 1; i >= 0; i--)
     {
-      heapI(array1, size, f);
+      heapI(array1, size1, f);
     }
   }
 }
 void extract_min(int array1[], int num)
 {
   int f;
-  for (f = 0; f < size; f++)
+  for (f = 0; f < size1; f++)
   {
     if (num == array1[f])
       break;
   }
 
-  swap(&array1[f], &array1[size - 1]);
+  swap(&array1[f], &array1[size1 - 1]);
   size -= 1;
-  for (int i = size / 2 - 1; i >= 0; i--)
+  for (int i = size1 / 2 - 1; i >= 0; i--)
   {
-    heapI(array1, size, f);
+    heapI(array1, size1, f);
   }
 }
 void printArray1(int array1[], int size)
 {
-  for (int f = 0; f < size; ++f)
+  for (int f = 0; f < size1; ++f)
     printf("%d ", array1[f]);
   printf("\n");
 }
@@ -82,7 +82,7 @@ int main()
   insert(array1, 2);
 
   printf("Max-Heap array: ");
-  printArray(array1, size);
+  printArray(array1, size1);
 
   delRoot(array1, 4);
 
