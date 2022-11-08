@@ -19,74 +19,74 @@ void heapI(int array[], int size, int f)
     int largest = f;
     int l = 2 * f + 1;
     int r = 2 * f + 2;
-    if (l < size && array[l] > array[largest])
+    if (l < size && array1[l] > array1[largest])
       largest = l;
-    if (r < size && array[r] > array[largest])
+    if (r < size && array1[r] > array1[largest])
       largest = r;
     if (largest != f)
     {
-      swap(&array[f], &array[largest]);
-      heapI(array, size, largest);
+      swap(&array1[f], &array1[largest]);
+      heapI(array1, size, largest);
     }
   }
 }
 
 //insert new numbers
-void insert(int array[], int newNum)
+void insert(int array1[], int newNum)
 {
   if (size == 0)
   {
-    array[0] = newNum;
+    array1[0] = newNum;
     size += 1;
   }
   else
   {
-    array[size] = newNum;
+    array1[size] = newNum;
     size += 1;
     for (int f = size / 2 - 1; i >= 0; i--)
     {
-      heapI(array, size, f);
+      heapI(array1, size, f);
     }
   }
 }
-void extract_min(int array[], int num)
+void extract_min(int array1[], int num)
 {
   int f;
   for (f = 0; f < size; f++)
   {
-    if (num == array[f])
+    if (num == array1[f])
       break;
   }
 
-  swap(&array[f], &array[size - 1]);
+  swap(&array1[f], &array1[size - 1]);
   size -= 1;
   for (int i = size / 2 - 1; i >= 0; i--)
   {
-    heapI(array, size, f);
+    heapI(array1, size, f);
   }
 }
-void printArray(int array[], int size)
+void printArray1(int array1[], int size)
 {
   for (int f = 0; f < size; ++f)
-    printf("%d ", array[f]);
+    printf("%d ", array1[f]);
   printf("\n");
 }
 int main()
 {
-  int array[10];
+  int array1[10];
 
-  insert(array, 3);
-  insert(array, 4);
-  insert(array, 9);
-  insert(array, 5);
-  insert(array, 2);
+  insert(array1, 3);
+  insert(array1, 4);
+  insert(array1, 9);
+  insert(array1, 5);
+  insert(array1, 2);
 
   printf("Max-Heap array: ");
-  printArray(array, size);
+  printArray(array1, size);
 
-  delRoot(array, 4);
+  delRoot(array1, 4);
 
   printf("After deleting an element: ");
 
-  printArray(array, size);
+  printArray(array1, size);
 }
