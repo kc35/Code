@@ -1,14 +1,14 @@
 #include <stdio.h>
 int size = 0;
-void swap(int *a, int *b)
+void swap(int *a1, int *b1)
 {
-  int temp = *b;
-  *b = *a;
-  *a = temp;
+  int temp = *b1;
+  *b1 = *a1;
+  *a1 = temp;
 }
 
 // algorithm to check whether the values of root, left child as well as right child are larger compared to each other and swap them.
-void heapI(int array[], int size, int i)
+void heapI(int array[], int size, int f)
 {
   if (size == 1)
   {
@@ -16,16 +16,16 @@ void heapI(int array[], int size, int i)
   }
   else
   {
-    int largest = i;
-    int l = 2 * i + 1;
-    int r = 2 * i + 2;
+    int largest = f;
+    int l = 2 * f + 1;
+    int r = 2 * f + 2;
     if (l < size && array[l] > array[largest])
       largest = l;
     if (r < size && array[r] > array[largest])
       largest = r;
-    if (largest != i)
+    if (largest != f)
     {
-      swap(&array[i], &array[largest]);
+      swap(&array[f], &array[largest]);
       heapI(array, size, largest);
     }
   }
@@ -43,32 +43,32 @@ void insert(int array[], int newNum)
   {
     array[size] = newNum;
     size += 1;
-    for (int i = size / 2 - 1; i >= 0; i--)
+    for (int f = size / 2 - 1; i >= 0; i--)
     {
-      heapI(array, size, i);
+      heapI(array, size, f);
     }
   }
 }
 void extract_min(int array[], int num)
 {
-  int i;
-  for (i = 0; i < size; i++)
+  int f;
+  for (f = 0; f < size; f++)
   {
-    if (num == array[i])
+    if (num == array[f])
       break;
   }
 
-  swap(&array[i], &array[size - 1]);
+  swap(&array[f], &array[size - 1]);
   size -= 1;
   for (int i = size / 2 - 1; i >= 0; i--)
   {
-    heapI(array, size, i);
+    heapI(array, size, f);
   }
 }
 void printArray(int array[], int size)
 {
-  for (int i = 0; i < size; ++i)
-    printf("%d ", array[i]);
+  for (int f = 0; f < size; ++f)
+    printf("%d ", array[f]);
   printf("\n");
 }
 int main()
