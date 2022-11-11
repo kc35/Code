@@ -2,9 +2,9 @@
 int main()
 {
 int a[100], u, i, f, pos, swap;
-printf("Enter number of elementsn");
+printf("Enter number of elements");
 scanf("%d", &u);
-printf("Enter %d Numbersn", m);
+printf("Enter %d Numbers", u);
 for (i = 0; i < u; i++)
 scanf("%d", &a[i]);
 for(i = 0; i < u - 1; i++)
@@ -19,11 +19,11 @@ if(pos != i)
 {
 swap=a[i];
 a[i]=a[pos];
-a[pos}=swap;
+a[pos]=swap;
 }
 }
-printf("Sorted Array:m");
+printf("Sorted Array:");
 for(i = 0; i < u; i++)
-printf("%dn", a[i]);
+printf(" %d ", a[i]);
 return 0;
 }
