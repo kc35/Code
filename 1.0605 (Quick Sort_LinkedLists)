@@ -96,7 +96,7 @@ void quick_sort(struct Node* first, struct Node* last)
     struct Node* piv = lastNodePosition(first, last);
  
     if (piv != NULL && piv->next != NULL) {
-        quick_sort(pivot->next, last);
+        quick_sort(piv->next, last);
     }
  
     if (piv != NULL && first != piv) {
