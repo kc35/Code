@@ -4,13 +4,13 @@ void swap(int *a1, int *b1)
 {
   int temp1 = *b1;
   *b1 = *a1;
-  *a1 = temp;
+  *a1 = temp1;
 }
 
 // algorithm to check whether the values of root, left child as well as right child are larger compared to each other and swap them.
-void heapI(int array[], int size1, int f)
+void heapI(int array1[], int size1, int e)
 {
-  if (size == 1)
+  if (size1 == 1)
   {
     printf("Single element in the heap");
   }
@@ -37,13 +37,13 @@ void insert(int array1[], int newNum)
   if (size1 == 0)
   {
     array1[0] = newNum;
-    size += 1;
+    size1 += 1;
   }
   else
   {
     array1[size1] = newNum;
-    size += 1;
-    for (int f = size1 / 2 - 1; i >= 0; i--)
+    size1 += 1;
+    for (int e = size1 / 2 - 1; e >= 0; e--)
     {
       heapI(array1, size1, e);
     }
@@ -59,7 +59,7 @@ void extract_min(int array1[], int num)
   }
 
   swap(&array1[e], &array1[size1 - 1]);
-  size -= 1;
+  size1 -= 1;
   for (int i = size1 / 2 - 1; i >= 0; i--)
   {
     heapI(array1, size1, e);
@@ -82,11 +82,5 @@ int main()
   insert(array1, 2);
 
   printf("Max-Heap array: ");
-  printArray(array1, size1);
-
-  delRoot(array1, 4);
-
-  printf("After deleting an element: ");
-
-  printArray(array1, size1);
+  printArray1(array1, size1);
 }
