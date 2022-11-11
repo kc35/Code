@@ -1,0 +1,69 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+struct node {
+  int item;
+  struct node* left;
+  struct node* right;
+};
+
+// Traverse inorder
+void inorderTraverse(struct node* root) {
+  if (root == NULL) return;
+  inorderTraverse(root->left);
+  printf("%d ->", root->item);
+  inorderTraverse(root->right);
+}
+
+// Traverse Preorder
+void preorderTraverse(struct node* root) {
+  if (root == NULL) return;
+  printf("%d ->", root->item);
+  preorderTraverse(root->left);
+  preorderTraverse(root->right);
+}
+
+// Traverse Postorder
+void postorderTraverse(struct node* root) {
+  if (root == NULL) return;
+  postorderTraverse(root->left);
+  postorderTravers(root->right);
+  printf("%d ->", root->item);
+}
+
+struct node* createNode(value) {
+  struct node* newNode = malloc(sizeof(struct node));
+  newNode->item = value;
+  newNode->left = NULL;
+  newNode->right = NULL;
+
+  return newNode;
+}
+
+//Left Node Insertion
+struct node* LInsert(struct node* root, int value) {
+  root->left = NewNode1(value);
+  return root->left;
+}
+
+//Right Node Insertion
+struct node* RInsert(struct node* root, int value) {
+  root->right = NewNode1(value);
+  return root->right;
+}
+
+int main() {
+  struct node* root = NewNode1(1);
+  LInsert(root, 2);
+  RInsert(root, 3);
+  LInsert(root->left, 4);
+
+  printf("Inorder traversal \n");
+  inorderTraverse(root);
+
+  printf("\nPreorder traversal \n");
+  preorderTraverse(root);
+
+  printf("\nPostorder traversal \n");
+  postorderTraverse(root);
+}
