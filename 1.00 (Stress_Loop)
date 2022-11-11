@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+// I want you to change the increment and n and see at what point you end up with an extra loop
+
+int main(int argc, char** argv){
+
+    float i;
+    float increment = 0.00000000000001; //Change around this
+    //if n is kept constant, and 3 zeroes are added to increment, then the maximum the number it reaches is multiplied by 10 for everyaddition 0 added to increment. 
+    float n = 0.0000000001; //And this (this is 10 times increment)
+    // Adding two more zeroes, leads to an extra print of n. 
+    int count = 1;
+
+    for (i=0.0; i<n; i+=increment) {
+        printf("Loop Number: %d\n", count);
+        count++;
+    }
+
+    return 0;
+}
