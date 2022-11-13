@@ -1,29 +1,29 @@
 #include <stdio.h>
 int main()
 {
-int a[100], u, i, f, pos, swap;
+int k[100], u, i, f, pos, swap;
 printf("Enter number of elements");
 scanf("%d", &u);
 printf("Enter %d Numbers", u);
 for (i = 0; i < u; i++)
-scanf("%d", &a[i]);
+scanf("%d", &k[i]);
 for(i = 0; i < u - 1; i++)
 {
 pos=i;
 for(f = i + 1; f < u; f++)
 {
-if(a[pos] > a[f])
+if(k[pos] > k[f])
 pos=f; 
 }
 if(pos != i)
 {
-swap=a[i];
-a[i]=a[pos];
-a[pos]=swap;
+swap=k[i];
+k[i]=k[pos];
+k[pos]=swap;
 }
 }
 printf("Sorted Array:");
 for(i = 0; i < u; i++)
-printf(" %d ", a[i]);
+printf(" %d ", k[i]);
 return 0;
 }
